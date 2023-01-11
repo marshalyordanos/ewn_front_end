@@ -1,0 +1,75 @@
+//import "./App.css";
+import React, { useState } from "react";
+import { AgGridReact } from "ag-grid-react";
+import "ag-grid-enterprise";
+
+import "ag-grid-community/dist/styles/ag-grid.css";
+import "ag-grid-community/dist/styles/ag-theme-material.css";
+import { DATA } from "./data";
+import DeatailsComponent from "./details";
+
+function Memberlist() {
+  const [gridApi, setGridApi] = useState();
+  const rowData = DATA;
+
+  const columns = [
+    {
+      headerName: "Name",
+      field: "name",
+      cellRenderer: "agGroupCellRenderer",
+      checkboxSelection: true,
+      headerCheckboxSelection: true,
+    },
+    {headerName: "Email",field: "email",},
+    { headerName: "Residence Address", field: "residence_address" },
+    { headerName: "Phone", field: "phone" },
+    { headerName: "Employ Type", field: "employ_type" },
+    { headerName: "Company Name", field: "company_name" },
+    { headerName: "Job Title", field: "job_title" },
+    { headerName: "Education", field: "education" },
+    { headerName: "Expertis Area", field: "expertis_area" },
+    { headerName: "Interest Area", field: "interest_area" },
+    { headerName: "Aprove", field: "Aprove" },
+  ];
+
+  const defColumnDefs = { flex: 1 };
+
+  const onGridReady=(params)=>{
+    console.log("grid is ready")
+    fetch("http://localhost:5000/members").then(resp=>resp.json())
+    .then(resp=>{console.log(resp)
+      params.api.applyTransaction({add:resp})})
+  }
+  const onFirstDataRendered = () => {
+    // for all rows expanded
+    // gridApi.api.forEachNode((node) => {
+    //   node.setExpanded(true);
+    // });
+
+    // for specific row expand
+    const row2 = gridApi.api.getDisplayedRowAtIndex(1);
+    row2.setExpanded(true);
+    // gridApi.api.getDisplayedRowAtIndex(0).setExpanded(true);
+  };
+
+  return (
+    <div className="App">
+      <h2 align="center">Ag Grid with React</h2>
+      <p align="center">Details Row Panel in AG Grid</p>
+      <div className="ag-theme-material" style={{ height: 600 }}>
+        <AgGridReact
+          //rowData={rowData}
+          columnDefs={columns}
+          defaultColDef={defColumnDefs}
+          onGridReady={onGridReady}
+          masterDetail={true}
+          detailCellRenderer={(props) => <DeatailsComponent {...props} />}
+          detailRowHeight={300}
+          onFirstDataRendered={onFirstDataRendered}
+        />
+      </div>
+    </div>
+  );
+}
+
+export default Memberlist;
