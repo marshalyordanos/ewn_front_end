@@ -43,7 +43,7 @@ const columns = [
   },
   {
     title: "company name",
-    dataIndex: "year",
+    dataIndex: "company_name",
   },
   {
     title: "Job Title",
@@ -168,7 +168,7 @@ function Memberlist() {
   return (
     <Con>
       <Modal
-        title="Basic Modal"
+        title="Send email"
         open={isModalOpen}
         footer={[
           <button

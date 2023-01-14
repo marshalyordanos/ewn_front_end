@@ -29,14 +29,6 @@ export const Regsiter = () => {
       <Header />
       <section className="login">
         <div className="container">
-          <div className="backImg">
-            <img src={back} alt="" />
-            <div className="text">
-              <h3>Register</h3>
-              <h1>My account</h1>
-            </div>
-          </div>
-
           <form onSubmit={handleSubmit}>
             <span>Username *</span>
             <input

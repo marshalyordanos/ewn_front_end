@@ -50,7 +50,7 @@ export const Loginuser = () => {
       <Header />
       {error && (
         <Modal
-          title="Basic Modal"
+          title="Error"
           open={isModalOpen}
           onOk={handleOk}
           onCancel={handleCancel}>
@@ -59,14 +59,6 @@ export const Loginuser = () => {
       )}
       <section className="login">
         <div className="container">
-          <div className="backImg">
-            <img src={back} alt="" />
-            <div className="text">
-              <h3>Login as a Member</h3>
-              <h1>My account</h1>
-            </div>
-          </div>
-
           <form onSubmit={handleSubmit}>
             <span>Username or email address *</span>
             <input type="text" required ref={userRef} />
@@ -79,9 +71,9 @@ export const Loginuser = () => {
             <Link to="/addmember" className="link">
               Register
             </Link>
-            <Link to="/login" className="link">
-              Login as Admintrator
-            </Link>
+            {/* <Link to="/register" className="link">
+              Register as Admintrator
+            </Link> */}
           </form>
         </div>
       </section>

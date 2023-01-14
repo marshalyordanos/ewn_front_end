@@ -38,7 +38,7 @@ export const UpdateMember = () => {
   const [organization, setOrganization] = useState("");
   const [graduate_date, setGraduate_date] = useState("");
   const [error, setError] = useState(false);
-  //   cosn
+  console.log("---o---------", users); //
 
   useEffect(() => {
     // const featchData = async()=>{
@@ -48,10 +48,10 @@ export const UpdateMember = () => {
   }, []);
 
   const onFinish = async (values) => {
-    console.log("Success:", values);
+    console.log("Success:", residence_address);
     const formData = {
       email: email ? email : users.email,
-      residence_address: residence_address
+      residence_address: users.residence_address
         ? residence_address
         : users.residence_address,
       phone: phone ? phone : users.phone,
@@ -155,11 +155,7 @@ export const UpdateMember = () => {
                   {" "}
                   <Form.Item name="benefit">
                     <Select
-                      placeholder={
-                        users?.benbenefitTypeefit
-                          ? users?.benefitType
-                          : "select"
-                      }
+                      placeholder={"select"}
                       // style={{ width: 120 }}
                       onChange={handleBenefitChange}
                       options={[
@@ -211,9 +207,7 @@ export const UpdateMember = () => {
                   <Input
                     onChange={(e) => setEmail(e.target.value)}
                     // placeholder=""
-                    placeholder={
-                      users?.email ? users?.email : "NaEmail addressme "
-                    }
+                    placeholder={"NaEmail addressme "}
                   />
                 </Form.Item>
               </Col>
@@ -222,12 +216,7 @@ export const UpdateMember = () => {
               <Col md>
                 <Form.Item name="residence">
                   <Input
-                    // name=""
-                    placeholder={
-                      users?.residence_address
-                        ? users?.residence_address
-                        : "Residence Address"
-                    }
+                    placeholder={"Residence Address"}
                     onChange={(e) => setResidence_address(e.target.value)}
                     // placeholder=" "
                   />
@@ -238,7 +227,7 @@ export const UpdateMember = () => {
                   <Input
                     onChange={(e) => setPhone(e.target.value)}
                     // placeholder=""
-                    placeholder={users?.phone ? users?.phone : "Phone number  "}
+                    placeholder={"Phone number  "}
                   />
                 </Form.Item>
               </Col>
@@ -634,13 +623,5 @@ const Container = styled.div`
   .addmember_btn {
     /* display: flex;
     justify-content: end; */
-  }
-  .ant-input-password {
-    display: flex;
-    align-items: center;
-  }
-  .ant-input-password * {
-    margin: 0;
-    padding: 0;
   }
 `;

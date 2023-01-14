@@ -102,7 +102,7 @@ const MemebrPaymentList = () => {
       </div>
       <Body>
         <div className="member__top">
-          <h2>Ag Grid with React</h2>
+          <h2>Payment List</h2>
           {/* <span className="left_btns">
             {selectedRowKeys.length > 0 && (
               <button className="email__btn">Send Emial</button>

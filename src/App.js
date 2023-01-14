@@ -76,7 +76,7 @@ const App = () => {
 
             <Route exact path="/loginuser" component={Loginuser} />
             <Route exact path="/login" component={Loginuser} />
-            <Route exact path="/register" component={Regsiter} />
+            <Route exact path="/register/1234" component={Regsiter} />
             <Route exact path="/addmember" component={Addmember} />
             <Route
               exact

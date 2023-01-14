@@ -21,7 +21,7 @@ export const Card = ({ posts }) => {
             <div className="box boxItems" key={item.id}>
               {/* first ma yo  <div className='img'>{item.photo && <img src={item.cover} alt='' />}</div>*/}
               <div className="img">
-                {item?.video && (
+                {item?.video && item?.video != "null" && (
                   <video width="320" height="240" controls>
                     <source
                       src={"http://localhost:5000" + item?.video}

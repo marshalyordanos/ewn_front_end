@@ -1,13 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { Header } from "../../components/header/Header";
-import { Button, Checkbox, Form, Input } from "antd";
+import { Alert, Button, Checkbox, Form, Input, Modal } from "antd";
 import { user } from "../../redux/authReducer";
 import axios from "axios";
 import { useSelector } from "react-redux";
 const Payment = () => {
   const users = useSelector(user);
   const [form] = Form.useForm();
+  const [error, setError] = useState("");
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const onFinish = async (values) => {
     console.log("Success:", values);
     const res = await axios.post(
@@ -15,13 +17,35 @@ const Payment = () => {
       values
     );
     console.log("========---", res);
+    setIsModalOpen(true);
+
     form.resetFields();
   };
   const onFinishFailed = (errorInfo) => {
     console.log("Failed:", errorInfo);
   };
+  const handleOk = () => {
+    setIsModalOpen(false);
+    // setError("");
+  };
+  const handleCancel = () => {
+    setIsModalOpen(false);
+    // setError("");
+  };
+
   return (
     <Container>
+      <Modal
+        title="payment successfully"
+        open={isModalOpen}
+        onOk={handleOk}
+        onCancel={handleCancel}>
+        <Alert
+          message={"The payment is successfully paid!"}
+          type="success"
+          closable
+        />
+      </Modal>
       <div>
         <Header />
       </div>
@@ -43,20 +67,13 @@ const Payment = () => {
               rules={[
                 {
                   required: true,
-                  message: "Please input your username!",
+                  message: "Please input your price!",
                 },
               ]}>
               <Input type="number" placeholder="Price" />
             </Form.Item>
 
-            <Form.Item
-              name="note"
-              rules={[
-                {
-                  required: true,
-                  message: "Please input your username!",
-                },
-              ]}>
+            <Form.Item name="note">
               <Input placeholder="note" />
             </Form.Item>
 

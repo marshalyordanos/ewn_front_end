@@ -14,7 +14,7 @@ import {
 } from "@ant-design/icons";
 import { DatePicker, Input, Select, Form, Button, Alert, Modal } from "antd";
 export const Addmember = () => {
-  const [urls, setUrls] = useState(null);
+  const [urls, setUrls] = useState("");
 
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
@@ -115,7 +115,7 @@ export const Addmember = () => {
       <Header />
       {error && (
         <Modal
-          title="Basic Modal"
+          title="Error"
           open={isModalOpen}
           onOk={handleOk}
           onCancel={handleCancel}>
@@ -260,7 +260,7 @@ export const Addmember = () => {
                     <div className=" absolute top-0  right-0 z-20">
                       <button
                         onClick={() => {
-                          setUrls(null);
+                          setUrls("");
                         }}>
                         <CloseOutlined style={{ color: "white" }} />
                       </button>

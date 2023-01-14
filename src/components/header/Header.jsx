@@ -10,8 +10,8 @@ import { user } from "../../redux/authReducer";
 export const Header = () => {
   const [scroll, setScroll] = useState(false);
   window.addEventListener("scroll", function () {
-    const header = this.document.querySelector(".header");
-    header.classList.toggle("active", this.window.scrollY > 100);
+    // const header = this.document.querySelector(".header");
+    // header.classList.toggle("active", this.window.scrollY > 100);
     if (this.window.scrollY > 100) {
       setScroll(true);
     } else {
