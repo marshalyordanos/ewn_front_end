@@ -25,6 +25,10 @@ import adminuser from "./pages/home/adminuser";
 import memberlist from "./pages/member/memberlist";
 import { useDispatch, useSelector } from "react-redux";
 import { local, token, user } from "./redux/authReducer";
+import Payment from "./pages/paymnet/Payment";
+import MemebrPaymentList from "./pages/member/MemebrPaymentList";
+import { Update } from "@mui/icons-material";
+import { UpdateMember } from "./pages/member/UpdateMememr";
 
 const App = () => {
   //after login
@@ -45,15 +49,18 @@ const App = () => {
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/addmember" component={Addmember} />
+            <Route exact path="/payment" component={Payment} />
 
             <Route exact path="/adminuser" component={adminuser} />
             <Route exact path="/blog" component={Blog} />
             <Route exact path="/memberlist" component={memberlist} />
+            <Route exact path="/memberlist/:id" component={MemebrPaymentList} />
+
             <Route exact path="/program" component={program} />
             <Route exact path="/about" component={aboutus} />
             <Route exact path="/contactus" component={contactus} />
             <Route exact path="/post/:id" component={DetailsPages} />
-            <Route exact path="/account" component={Account} />
+            <Route exact path="/account" component={UpdateMember} />
             <Route exact path="/create" component={Create} />
             <Route exact path="*" component={() => <Redirect to={"/"} />} />
           </Switch>
@@ -63,7 +70,7 @@ const App = () => {
             <Route exact path="/program" component={program} />
             <Route exact path="/contactus" component={contactus} />
 
-            <Route exact path="/admin" component={Login} />
+            {/* <Route exact path="/admin" component={Login} /> */}
             <Route exact path="/blog" component={Blog} />
             <Route exact path="/about" component={aboutus} />
 

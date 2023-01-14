@@ -12,7 +12,7 @@ import {
   ConsoleSqlOutlined,
   PlusOutlined,
 } from "@ant-design/icons";
-import { DatePicker, Input, Select, Form, Button } from "antd";
+import { DatePicker, Input, Select, Form, Button, Alert, Modal } from "antd";
 export const Addmember = () => {
   const [urls, setUrls] = useState(null);
 
@@ -22,7 +22,7 @@ export const Addmember = () => {
   const [phone, setPhone] = useState("");
   const [photo, setPhoto] = useState("");
   const [password, setPassword] = useState("");
-
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [memberType, setMemberType] = useState("");
   const [benefitType, setBenefitType] = useState("");
 
@@ -33,7 +33,7 @@ export const Addmember = () => {
   const [business, setBusiness] = useState("");
   const [organization, setOrganization] = useState("");
   const [graduate_date, setGraduate_date] = useState("");
-  const [error, setError] = useState(false);
+  const [error, setError] = useState("");
   const onFinish = async (values) => {
     console.log("Success:", values);
     const formData = new FormData();
@@ -59,9 +59,11 @@ export const Addmember = () => {
         "http://localhost:5000/members/addmember",
         formData
       );
+      // console.log("--------------0000000-------", res);
       res.data && window.location.replace("/");
     } catch (error) {
-      setError(true);
+      setError(error?.response?.data?.message);
+      setIsModalOpen(true);
     }
   };
   const onFinishFailed = (errorInfo) => {
@@ -96,9 +98,30 @@ export const Addmember = () => {
     console.log(date, dateString);
     setGraduate_date(dateString);
   };
+  // const onClose = (e) => {
+  //   console.log(e, "I was closed.");
+  //   setError("");
+  // };
+  const handleOk = () => {
+    setIsModalOpen(false);
+    setError("");
+  };
+  const handleCancel = () => {
+    setIsModalOpen(false);
+    setError("");
+  };
   return (
     <Container>
       <Header />
+      {error && (
+        <Modal
+          title="Basic Modal"
+          open={isModalOpen}
+          onOk={handleOk}
+          onCancel={handleCancel}>
+          <Alert message={error} type="error" closable />
+        </Modal>
+      )}
       <section className="breadcrumbs">
         <div className="container">
           <div className="d-flex justify-content-between align-items-center">

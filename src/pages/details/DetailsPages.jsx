@@ -69,8 +69,22 @@ export const DetailsPages = () => {
       <section className="singlePage">
         <div className="container">
           <div className="col-lg-6">
-            {post.photo && (
-              <img className="image" src={PublicFlo + post.photo} alt="" />
+            {post.photo && post.photo != "null" && (
+              <img
+                className="image"
+                src={"http://localhost:5000" + post.photo}
+                alt=""
+              />
+            )}
+            {post?.video && (
+              <div className="video_con">
+                <video controls>
+                  <source
+                    src={"http://localhost:5000" + post?.video}
+                    type="video/mp4"
+                  />
+                </video>
+              </div>
             )}
           </div>
           <div className="right">
@@ -143,10 +157,28 @@ const Container = styled.div`
     display: flex;
     gap: 20px;
   }
+  .video_con {
+    width: 44vw;
+    /* border: 1px solid red; */
+    /* overflow: hidden; */
+  }
+  .video_con video {
+    width: 100%;
+    /* min-width: 300px; */
+  }
   @media screen and (max-width: 1200px) {
     .container {
       display: block;
       gap: 20px;
+    }
+    .video_con {
+      width: 80vw;
+      /* border: 1px solid red; */
+      /* overflow: hidden; */
+    }
+    .video_con video {
+      width: 100%;
+      /* min-width: 300px; */
     }
   }
 `;

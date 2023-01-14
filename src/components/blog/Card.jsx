@@ -12,6 +12,7 @@ import { Link } from "react-router-dom";
 export const Card = ({ posts }) => {
   // create file garnebelema
   const PublicFlo = "http://localhost:5000/images/";
+  console.log("pots", posts);
   return (
     <>
       <section className="blog">
@@ -20,7 +21,17 @@ export const Card = ({ posts }) => {
             <div className="box boxItems" key={item.id}>
               {/* first ma yo  <div className='img'>{item.photo && <img src={item.cover} alt='' />}</div>*/}
               <div className="img">
-                {item.photo && <img src={PublicFlo + item.photo} alt="" />}
+                {item?.video && (
+                  <video width="320" height="240" controls>
+                    <source
+                      src={"http://localhost:5000" + item?.video}
+                      type="video/mp4"
+                    />
+                  </video>
+                )}
+                {item?.photo && item.photo != "null" && (
+                  <img src={"http://localhost:5000" + item?.photo} alt="" />
+                )}
               </div>
               <div className="details">
                 <div className="tag">

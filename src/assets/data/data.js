@@ -35,6 +35,11 @@ export const nav = [
     text: "contact",
     url: "/contactus",
   },
+  {
+    id: 8,
+    text: "Payment",
+    url: "/payment",
+  },
 ];
 export const navadmin = [
   {

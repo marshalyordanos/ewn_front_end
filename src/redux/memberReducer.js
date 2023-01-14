@@ -32,7 +32,11 @@ export const MemberReducer = createSlice({
     status: null,
     err: null,
   },
-  reducers: {},
+  reducers: {
+    // sent:(state,action)=>{
+    //   if
+    // }
+  },
   extraReducers: {
     [getMembers.pending]: (state, action) => {
       state.status = "loading";

@@ -35,6 +35,13 @@ export const Header = () => {
                     </li>
                   );
                 })}
+              {!users?.admin && (
+                <>
+                  <li>
+                    <Link to="/addmember">{"Register"}</Link>
+                  </li>
+                </>
+              )}
               {users?.admin &&
                 nav.map((link) => (
                   <li key={link.id}>
