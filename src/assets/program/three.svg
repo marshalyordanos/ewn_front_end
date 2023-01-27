@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 103.54 103.54">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fcbd0b;
+        stroke-width: 1.71px;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4 {
+        stroke: #fcbd0b;
+      }
+
+      .cls-1, .cls-3 {
+        stroke-miterlimit: 10;
+      }
+
+      .cls-2 {
+        stroke-width: 2.35px;
+      }
+
+      .cls-2, .cls-3, .cls-4 {
+        fill: none;
+      }
+
+      .cls-2, .cls-4 {
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      .cls-3 {
+        stroke-width: 5.97px;
+      }
+
+      .cls-4 {
+        stroke-width: 5.12px;
+      }
+    </style>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer 1">
+    <g>
+      <circle class="cls-2" cx="51.77" cy="51.77" r="50.59"/>
+      <path class="cls-4" d="m24.64,48.45l19.38-19.38"/>
+      <path class="cls-1" d="m28.16,76.65h1.76c1.95,0,3.52-1.58,3.52-3.52v-8.81c0-1.95-1.58-3.52-3.52-3.52h-1.76c-1.95,0-3.52,1.58-3.52,3.52v8.81c0,1.95,1.58,3.52,3.52,3.52Z"/>
+      <path class="cls-1" d="m49.31,76.65h1.76c1.95,0,3.52-1.58,3.52-3.52v-19.39c0-1.95-1.58-3.52-3.52-3.52h-1.76c-1.95,0-3.52,1.58-3.52,3.52v19.39c0,1.95,1.58,3.52,3.52,3.52Z"/>
+      <path class="cls-1" d="m70.46,76.65h1.76c1.95,0,3.52-1.58,3.52-3.52V29.06c0-1.95-1.58-3.52-3.52-3.52h-1.76c-1.95,0-3.52,1.58-3.52,3.52v44.06c0,1.95,1.58,3.52,3.52,3.52Z"/>
+      <path class="cls-3" d="m47.55,37.88v-12.34h-12.34"/>
+    </g>
+  </g>
+</svg>

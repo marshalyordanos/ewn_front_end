@@ -1,120 +1,427 @@
-import React from 'react'
-import { Header } from '../../components/header/Header'
+import React from "react";
+import styled from "styled-components";
+import { Header } from "../../components/header/Header";
+import Left2 from "../../assets/left2.svg";
+import Program from "../../assets/program2.svg";
+import Left1 from "../../assets/left1.svg";
+import One from "../../assets/program/one.svg";
+import Two from "../../assets/program/two.svg";
+import Four from "../../assets/program/four.svg";
+import Five from "../../assets/program/five.svg";
+import Six from "../../assets/program/six.svg";
+import Three from "../../assets/program/three.svg";
+import ProgramLast from "../../assets/program/program_last.svg";
 
 function program() {
   return (
-      <><Header />
-    <div>
-       <section class="features">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>EWiEn Incubator Program</h2>
-          <p>ARE YOU A FEMALE ENTREPRENEUR IN THE ENERGY SECTOR?</p>
+    <Container>
+      <Header />
+      <div className="first_con">
+        <div className="first_con_decor">
+          <img className="one" src="/img/border/one.png" alt="" />
+          {/* <img src="/img/border/two.png" alt="" /> */}
         </div>
-
-        <div class="row" >
-          <div class="col-md-5">
-            <img src="assets/img/features-1.png" class="img-fluid" alt=""/>
+        <FirstCon>
+          <div className="left">
+            <img src={"photo_2021-04-09_12-32-08-1.jpg"} alt="" />
+            {/* <h1>Annual Women in Energy 2021 Event</h1> */}
           </div>
-          <div class="col-md-7 pt-4">
-            <h3>EWiEn has launched the first women youth, energy-based incubator program in Ethiopia (EWiEn incubator). The program is designed to address the energy access gap by making women change agents, through promoting innovation and women's inclusiveness.</h3>
-            
+          <div className="right">
+            <h1>What We Do</h1>
+            <h2>
+              EWiWn was set up to promote visibility of professional women in
+              the energy sector, ultimately contributing to gender balance and
+              diverstiy in the sector. An increase in gender diversity will lead
+              to increasing inequality, better decision-making, improved
+              management, greater innovation, and a fresh perspective on the
+              develpment of society at large.
+            </h2>
+            <button>Watch Other Videos</button>
           </div>
-        </div>
-
-        <div class="row">
-          <div class="col-md-5 order-1 order-md-2">
-            <img src="assets/img/features-2.svg" class="img-fluid" alt=""/>
-          </div>
-          <div class="col-md-7 pt-5 order-2 order-md-1">
-            <h3>EWIEN INCUBATOR</h3>
-            <p class="fst-italic">
-            The EWiEn incubator is a project that aims to bring social, economic, and environmental impacts across the entire value chain of the renewable energy business, starting from generation to consumption of energy. Women entrepreneurs will be trained in critical industry skills to create innovations that are affordable, accessible, and user-friendly for households or commercial use.
-            </p>
-            <p>
-            The EWiEn incubator encourages women to develop start-up ideas related to; products, processes, technology, financial mechanisms, data services, and other aspects that can support and transform renewable energy accessibility specially solar energy in Ethiopia. The program will assist innovators by incubating their ideas through mentorship, technical, business, and skill development training, prototyping development, and networking to get their ideas off the ground and push it to the next level. This project is expected to generate ideas that will transform Ethiopia’s energy sector through the participation of young women.
-            </p>
-          </div>
-        </div>
-
-        <div class="row" >
-          <div class="col-md-5">
-            <img src="assets/img/features-2.png" class="img-fluid" alt=""/>
-          </div>
-          <div class="col-md-7 pt-5">
-            <h3>ELIGIBILITY</h3>
-            <ul>
-              <li><i class="bi bi-check"></i>Idea:<p> Business ideas should address a problem within the renewable energy sector specifically solar energy solutions.</p></li>
-              
-              <li><i class="bi bi-check"></i>Team <p>The founder/cofounder of the business must be female</p></li>
-              <li><i class="bi bi-check"></i> Target <p>The business needs to bring an innovative idea that is targeted towards the community.</p></li>
-              <li><i class="bi bi-check"></i> Commitment <p>Must be willing to commit 6hr per month to the incubation program</p></li>
-              <li><i class="bi bi-check"></i> Scalable <p>The business idea needs to have a potential to be scalable.</p></li>
-              <li><i class="bi bi-check"></i> Financial <p>The business idea should be financially viable.</p></li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="row" >
-          <div class="col-md-5 order-1 order-md-2">
-            <img src="assets/img/features-4.svg" class="img-fluid" alt=""/>
-          </div>
-          <div class="col-md-7 pt-5 order-2 order-md-2">
-            <h3>PROGRAM DETAILS</h3>
-            <p class="fst-italic">
-            The EWiEn incubator program is designed to help female-led energy startups develop their business to the next level through the planned training and coaching sessions in the program. The program includes various training tailored for business ideas in renewable energy specifically solar energy.
-            </p>
-            <ul>
-              <li><i class="bi bi-check"></i>Entrepreneuership Training:<p>The objective of this training is to equip trainees with entrepreneurship skills that allow them to develop their business ideas and start businesses. This entrepreneurial training will allow women to start their own business by teaming up with other trainees in the team or outside of the incubation program.
-            </p>
-            <p>The training will include</p>
-            <ul>
-              <li><p class="bi bi-check"> Introduction to entrepreneurship</p></li>
-              <li><p class="bi bi-check"> Leadership/ team building</p></li>
-              <li><p class="bi bi-check">Market research</p></li>
-              <li><p class="bi bi-check"> business model canvas</p></li>
-              <li><p class="bi bi-check"> Financial Projection</p></li>
-              <li><p class="bi bi-check">Business plan writing</p></li>
-              <li><p class="bi bi-check">Brand positioning/ vision/ Mission/</p></li>
-              <li><p class="bi bi-check">Social media presence/ Personal branding/ Logo Design</p></li>
-              <li><p class="bi bi-check">Pitch training</p></li>             
-            </ul>
-            </li>
-              </ul>
-            </div>
-             <div class="col-md-5 order-1 order-md-2">
-              <ul>
-              <li><i class="bi bi-check"></i>Entrepreneuership Training:<p>The objective of this training is to equip trainees with entrepreneurship skills that allow them to develop their business ideas and start businesses. This entrepreneurial training will allow women to start their own business by teaming up with other trainees in the team or outside of the incubation program.
-            </p>
-            <p>The training will include</p>
-            <ul>
-              <li><p class="bi bi-check"> Introduction to entrepreneurship</p></li>
-              <li><p class="bi bi-check"> Leadership/ team building</p></li>
-              <li><p class="bi bi-check">Market research</p></li>
-              <li><p class="bi bi-check"> business model canvas</p></li>
-              <li><p class="bi bi-check"> Financial Projection</p></li>
-              <li><p class="bi bi-check">Business plan writing</p></li>
-              <li><p class="bi bi-check">Brand positioning/ vision/ Mission/</p></li>
-              <li><p class="bi bi-check">Social media presence/ Personal branding/ Logo Design</p></li>
-              <li><p class="bi bi-check">Pitch training</p></li>             
-            </ul>
-            </li>
-              </ul>
-            <p>
-            </p>
-          </div>
-          <div class="col-md-5 order-1 order-md-2">
-            <img src="assets/img/features-4.svg" class="img-fluid" alt=""/>
-          </div>
-        </div>
-
+        </FirstCon>
       </div>
-    </section>
-   
-    </div>
-      </>
-  )
+      <div className="second_con">
+        <div className="second_con_decor1">
+          <img style={{ width: "50vw" }} src={Left2} alt="" />
+        </div>
+        <SecondCon>
+          <div className="left">
+            <h1>What We Do</h1>
+            <h2>
+              EWiWn was set up to promote visibility of professional women in
+              the energy sector, ultimately contributing to gender balance and
+              diverstiy in the sector. An increase in gender diversity will lead
+              to increasing inequality, better decision-making, improved
+              management, greater innovation, and a fresh perspective on the
+              develpment of society at large.
+            </h2>
+            <button>Watch Other Videos</button>
+          </div>
+          <div className="right">
+            <img src={Program} alt="" />
+
+            {/* <h1>Annual Women in Energy 2021 Event</h1> */}
+          </div>
+        </SecondCon>
+      </div>
+      <div className="second_con">
+        <div className="second_con_decor">
+          <img style={{ width: "50vw" }} src={Left1} alt="" />
+        </div>
+        <Team1>
+          <h1>TOU ARE ELEGIBLE IF...</h1>
+          <div className="team__con">
+            <div className="cards">
+              <div className="team__row">
+                <div className="card1">
+                  <div className="team__header">
+                    <img src={One} alt="" />
+                    <h1>IDEA</h1>
+                  </div>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. A,
+                    vitae facere, earum natus voluptatum, officiis hic magnam
+                    consequuntur dignissimos soluta quam ducimus cupiditate
+                  </p>
+                </div>
+                <div className="card1">
+                  <div className="team__header">
+                    <img src={Two} alt="" />
+                    <h1>IDEA</h1>
+                  </div>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. A,
+                    vitae facere, earum natus voluptatum, officiis hic magnam
+                    consequuntur dignissimos soluta quam ducimus cupiditate
+                  </p>
+                </div>
+              </div>
+              <div className="team__row">
+                <div className="card1">
+                  <div className="team__header">
+                    <img src={Three} alt="" />
+                    <h1>IDEA</h1>
+                  </div>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. A,
+                    vitae facere, earum natus voluptatum, officiis hic magnam
+                    consequuntur dignissimos soluta quam ducimus cupiditate
+                  </p>
+                </div>
+                <div className="card1">
+                  <div className="team__header">
+                    <img src={Four} alt="" />
+                    <h1>IDEA</h1>
+                  </div>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. A,
+                    vitae facere, earum natus voluptatum, officiis hic magnam
+                    consequuntur dignissimos soluta quam ducimus cupiditate
+                  </p>
+                </div>
+              </div>
+              <div className="team__row">
+                <div className="card1">
+                  <div className="team__header">
+                    <img src={Five} alt="" />
+                    <h1>IDEA</h1>
+                  </div>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. A,
+                    vitae facere, earum natus voluptatum, officiis hic magnam
+                    consequuntur dignissimos soluta quam ducimus cupiditate
+                  </p>
+                </div>
+                <div className="card1">
+                  <div className="team__header">
+                    <img src={Six} alt="" />
+                    <h1>IDEA</h1>
+                  </div>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. A,
+                    vitae facere, earum natus voluptatum, officiis hic magnam
+                    consequuntur dignissimos soluta quam ducimus cupiditate
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="team_right">
+              <img src={ProgramLast} alt="" />
+              <button>Apply</button>
+              <p>We will help launch your bussines</p>
+            </div>
+          </div>
+        </Team1>
+      </div>
+      <Training>
+        <h1> TRAINING DETAILS</h1>
+        <div className="training__cards">
+          <div className="traininf__card">
+            <h1>Technical Training</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Voluptatibus alias velit, aliquid odit aliquam officia odio veniam
+              excepturi natus ipsum mollitia quidem voluptatum officiis.
+              Perspiciatis soluta odio temporibus ipsum id.
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo
+              laboriosam placeat accusamus praesentium modi minus quos a
+              quisquam quas assumenda.
+            </p>
+          </div>
+          <div className="traininf__card traininf__card2">
+            <h1>Technical Training</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Voluptatibus alias velit, aliquid odit aliquam officia odio veniam
+              excepturi natus ipsum mollitia quidem voluptatum officiis.
+              Perspiciatis soluta odio temporibus ipsum id.
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo
+              laboriosam placeat accusamus praesentium modi minus quos a
+              quisquam quas assumenda.
+            </p>
+          </div>
+        </div>
+      </Training>
+    </Container>
+  );
 }
 
-export default program
+const Training = styled.div`
+  > h1 {
+    text-align: center;
+    color: #2d6834;
+    font-size: 28px;
+    font-weight: 500;
+    margin-top: 00px;
+  }
+  .training__cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-top: 50px;
+    .traininf__card {
+      padding: 15px;
+      border-radius: 20px;
+      width: 450px;
+      border: 2px solid #fec034;
+      h1 {
+        font-size: 24px;
+        color: #2d6834;
+      }
+      p {
+        font-size: 18px;
+        color: #2d6834;
+      }
+    }
+    .traininf__card2 {
+      border: 2px solid #2d6834;
+      h1 {
+        font-size: 24px;
+        color: #fec034;
+      }
+    }
+  }
+`;
+
+const Team1 = styled.div`
+  text-align: center;
+  margin-top: 40px;
+  > h1 {
+    text-align: center;
+    color: #2d6834;
+    font-size: 28px;
+    font-weight: 500;
+    margin-top: 00px;
+  }
+  .team__con {
+    margin-top: 70px;
+    justify-content: center;
+    display: flex;
+    gap: 100px;
+    .team_right {
+      display: flex;
+      flex-direction: column;
+      button {
+        margin-top: 30px;
+        border: 1px solid #2d6834;
+        padding: 8px 40px;
+        color: #2d6834;
+        border-radius: 30px;
+      }
+      p {
+        color: #fec034;
+        font-size: 23px;
+        margin-top: 20px;
+      }
+      img {
+        width: 300px;
+      }
+    }
+    .cards {
+      .team__row {
+        /* margin-top: 30px; */
+        padding: 0 15px;
+        display: flex;
+        gap: 30px;
+        .card1 {
+          padding: 15px;
+
+          /* border: 1px solid #fec034; */
+          .team__header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            h1 {
+              color: #2d6834;
+              font-size: 25px;
+            }
+            img {
+              width: 70px;
+            }
+          }
+          p {
+            margin-top: 20px;
+            width: 250px;
+            font-size: 17px;
+          }
+        }
+      }
+    }
+  }
+`;
+const SecondCon = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 150px;
+  max-width: 1400px;
+  margin: auto;
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 100px;
+  .left {
+    h1 {
+      font-size: 30px;
+      color: #2d6834;
+      text-align: center;
+    }
+    h2 {
+      width: 600px;
+      text-align: justify;
+      font-size: 27px;
+      color: black;
+      font-weight: lighter;
+    }
+    button {
+      color: #2d6834;
+      border: 1px solid #2d6834;
+      padding: 10px 30px;
+      border-radius: 40px;
+      font-size: 20px;
+      margin-top: 10px;
+    }
+  }
+  .right {
+    h1 {
+      font-size: 22px;
+      color: #2d6834;
+      margin-top: 10px;
+    }
+    img {
+      width: 700px;
+      border-radius: 18px;
+    }
+  }
+`;
+
+const FirstCon = styled.div`
+  display: flex;
+  justify-content: center;
+  /* border: 1px solid; */
+  max-width: 1400px;
+  margin: auto;
+  justify-content: space-between;
+  align-items: center;
+  /* flex-wrap: wrap; */
+  margin-top: 50px;
+  gap: 100px;
+  .left {
+    img {
+      width: 500px;
+      border-radius: 20px;
+      height: 300px;
+      object-fit: cover;
+    }
+    h1 {
+      font-size: 22px;
+      color: #2d6834;
+    }
+  }
+  .right {
+    text-align: center;
+
+    h1 {
+      font-size: 30px;
+      color: #2d6834;
+      text-align: center;
+    }
+    h2 {
+      max-width: 700px;
+      text-align: justify;
+      font-size: 23px;
+      color: black;
+      font-weight: lighter;
+    }
+    button {
+      color: #2d6834;
+      border: 1px solid #2d6834;
+      padding: 10px 30px;
+      border-radius: 40px;
+      font-size: 20px;
+      margin-top: 10px;
+    }
+    .join_us_btn {
+      background-color: #fec034;
+      border: none;
+      border: #fec034 1px solid;
+      margin: 40px 0;
+      color: #2d6834;
+    }
+    .join_us_btn:hover {
+      background-color: white;
+      border: #fec034 1px solid;
+    }
+  }
+`;
+const Container = styled.div`
+  .first_con_decor {
+    /* background-color: #2d6834; */
+    .one {
+      width: 100vw;
+      max-height: 80px;
+    }
+  }
+  .second_con_decor {
+    /* border: 1px solid; */
+    display: flex;
+    justify-content: end;
+    img {
+      margin-top: 100px;
+    }
+  }
+  .second_con_decor1 {
+    /* border: 1px solid; */
+    display: flex;
+    /* justify-content: end; */
+    img {
+      margin-top: 100px;
+    }
+  }
+`;
+
+export default program;

@@ -41,7 +41,7 @@ export const User = () => {
             </button>
             {profileOpen && (
               <div className="openProfile boxItems" onClick={close}>
-                <Link to={"/account"}>
+                <Link to={"/profile"}>
                   <div className="image">
                     <div className="img">
                       <img src={"http://localhost:5000" + users.photo} alt="" />

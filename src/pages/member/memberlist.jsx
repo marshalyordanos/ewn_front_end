@@ -129,6 +129,7 @@ function Memberlist() {
       content: content,
     });
     setIsModalOpen(false);
+    setSelectedRowKeys([]);
     setContent("");
     console.log("res", res);
   };

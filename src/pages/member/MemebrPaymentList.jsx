@@ -1,4 +1,4 @@
-import { Table } from "antd";
+import { Image, Table } from "antd";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
@@ -39,6 +39,22 @@ const MemebrPaymentList = () => {
       dataIndex: "createdAt",
       render: (text) => <a>{new Date(text).toLocaleDateString()}</a>,
     },
+    {
+      title: "Attachment",
+      dataIndex: "image",
+      render: (text) =>
+        text ? (
+          <Image
+            // width={100}
+            height={70}
+            src={"http://localhost:5000" + text}
+            // alt="no attchiment"
+          />
+        ) : (
+          <p>No Attachment</p>
+        ),
+    },
+
     {
       title: "Approvement",
       dataIndex: "isActive",

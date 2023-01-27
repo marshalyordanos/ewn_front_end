@@ -1,9 +1,13 @@
 header {
-  background: rgb(4, 122, 63);
+  background: rgb(255, 255, 255);
   padding: 10px;
   box-shadow: 0 2px 4px rgb(0 0 0 / 8%);
   position: relative;
   z-index: 44;
+  height: 100px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
 }
 /* nav */
 nav ul {
@@ -12,7 +16,8 @@ nav ul {
 nav a {
   text-transform: capitalize;
   margin-right: 30px;
-  color: rgb(244, 248, 9);
+ font-size: 18px;
+  color: rgb(4, 122, 63);
 }
 /* User */
 .profile {
@@ -75,7 +80,7 @@ header.active {
 }
 
 header.active nav a {
-  color:  rgb(5, 102, 13);
+  color:  rgb(255, 255, 255);
 }
 @media screen and (max-width: 768px) {
   header .search {

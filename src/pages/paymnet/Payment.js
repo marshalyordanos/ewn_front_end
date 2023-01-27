@@ -8,13 +8,20 @@ import { useSelector } from "react-redux";
 const Payment = () => {
   const users = useSelector(user);
   const [form] = Form.useForm();
+  const [file, setFile] = useState(null);
+
   const [error, setError] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
   const onFinish = async (values) => {
     console.log("Success:", values);
+    const data = new FormData();
+    data.append("image", file);
+    data.append("note", values.note);
+    data.append("price", values.price);
+    console.log("ooooooo----", values, file);
     const res = await axios.post(
       "http://localhost:5000/posts/payment/" + users._id,
-      values
+      data
     );
     console.log("========---", res);
     setIsModalOpen(true);
@@ -74,8 +81,24 @@ const Payment = () => {
             </Form.Item>
 
             <Form.Item name="note">
-              <Input placeholder="note" />
+              <Input placeholder="Bank" />
             </Form.Item>
+            {file && (
+              <img width={200} src={URL.createObjectURL(file)} alt="images" />
+            )}
+            <div>
+              <label className="upload_lable" htmlFor="inputfile">
+                Upload Payment method
+              </label>
+
+              <input
+                type="file"
+                id="inputfile"
+                accept="image/*"
+                style={{ display: "none" }}
+                onChange={(e) => setFile(e.target.files[0])}
+              />
+            </div>
 
             <Form.Item
               wrapperCol={{
@@ -94,6 +117,13 @@ const Payment = () => {
 };
 
 const Container = styled.div`
+  .upload_lable {
+    border: 1px solid lightgray;
+    padding: 10px 20px;
+    margin: 10px 0;
+    background-color: green;
+    color: white;
+  }
   .con {
     display: flex;
     align-items: center;
