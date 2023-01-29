@@ -15,7 +15,11 @@ const BlogCard = ({ title, desc, photo, time }) => {
           <h2>{desc}</h2>
           <div className="first__row">
             <p>JUNE 3, 2022</p>
-            <button>Watch Other Videos</button>
+            <a
+              target={"_blank"}
+              href="https://www.youtube.com/@ethiopianwomeninenergyasso7086">
+              Watch Other Videos
+            </a>
           </div>
         </div>
       </FirstCon>
@@ -69,7 +73,8 @@ const FirstCon = styled.div`
       color: black;
       font-weight: lighter;
     }
-    button {
+    button,
+    a {
       color: #2d6834;
       border: 1px solid #2d6834;
       padding: 10px 30px;
@@ -87,6 +92,24 @@ const FirstCon = styled.div`
     .join_us_btn:hover {
       background-color: white;
       border: #fec034 1px solid;
+    }
+  }
+  @media screen and (max-width: 1200px) {
+    justify-content: center;
+    flex-wrap: wrap;
+    .right {
+      text-align: center;
+
+      img {
+        width: 300px;
+      }
+      #big {
+        width: 700px;
+        align-items: center;
+        align-self: center;
+        text-align: center;
+        margin: 0;
+      }
     }
   }
 `;

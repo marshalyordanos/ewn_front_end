@@ -6,8 +6,15 @@ import BorderLeft1 from "../assets/left1.svg";
 import BorderRight1 from "../assets/right1.svg";
 import Networking from "../assets/Networking.svg";
 import Recognition from "../assets/Recognition.svg";
+import { useHistory } from "react-router-dom";
+import { token } from "../redux/authReducer";
+import { useSelector } from "react-redux";
 
 const Membership = () => {
+  const tokens = useSelector(token);
+
+  const navigate = useHistory();
+
   return (
     <Container>
       <Header />
@@ -31,7 +38,11 @@ const Membership = () => {
               management, greater innovation, and a fresh perspective on the
               develpment of society at large.
             </h2>
-            <button>Watch Other Videos</button>
+            <a
+              target={"_blank"}
+              href="https://www.youtube.com/@ethiopianwomeninenergyasso7086">
+              Watch Other Videos
+            </a>
           </div>
         </FirstCon>
       </div>
@@ -50,7 +61,11 @@ const Membership = () => {
               management, greater innovation, and a fresh perspective on the
               develpment of society at large.
             </h2>
-            <button>Watch Other Videos</button>
+            <a
+              target={"_blank"}
+              href="https://www.youtube.com/@ethiopianwomeninenergyasso7086">
+              Watch Other Videos
+            </a>
           </div>
           <div className="right">
             <img src={Networking} alt="" />
@@ -83,7 +98,17 @@ const Membership = () => {
               management, greater innovation, and a fresh perspective on the
               develpment of society at large.
             </h2>
-            <button className="join_us_btn">Join Us</button>
+            <button
+              onClick={() => {
+                if (tokens) {
+                  navigate.push("/program");
+                } else {
+                  navigate.push("/addmember");
+                }
+              }}
+              className="join_us_btn">
+              Join Us
+            </button>
           </div>
         </FirstCon>
       </div>
@@ -102,14 +127,14 @@ const Membership = () => {
               management, greater innovation, and a fresh perspective on the
               develpment of society at large.
             </h2>
-            <button>Watch Other Videos</button>
+            <a
+              target={"_blank"}
+              href="https://www.youtube.com/@ethiopianwomeninenergyasso7086">
+              Watch Other Videos
+            </a>
           </div>
           <div className="right">
-            <img
-              src={"/Recognition.png"}
-              style={{ width: 1300, marginLeft: -400 }}
-              alt=""
-            />
+            <img src={"/Recognition.png"} id="big" style={{}} alt="" />
 
             {/* <h1>Annual Women in Energy 2021 Event</h1> */}
           </div>
@@ -141,8 +166,28 @@ const Membership = () => {
           </div>
         </div>
         <div className="team__btns">
-          <button className="orange">Register Today</button>
-          <button className="green">Pay membership fee</button>
+          <button
+            onClick={() => {
+              if (tokens) {
+                navigate.push("/program");
+              } else {
+                navigate.push("/login");
+              }
+            }}
+            className="orange">
+            Register Today
+          </button>
+          <button
+            onClick={() => {
+              if (tokens) {
+                navigate.push("/payment");
+              } else {
+                navigate.push("/login");
+              }
+            }}
+            className="green">
+            Pay membership fee
+          </button>
         </div>
         <div className="team__img">
           <img src="membership_last.jpg" alt="" />
@@ -216,6 +261,10 @@ const SecondCon = styled.div`
   margin: auto;
   justify-content: space-between;
   align-items: center;
+  @media screen and (max-width: 1600px) {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
 
   gap: 100px;
   .left {
@@ -231,7 +280,8 @@ const SecondCon = styled.div`
       color: black;
       font-weight: lighter;
     }
-    button {
+    button,
+    a {
       color: #2d6834;
       border: 1px solid #2d6834;
       padding: 10px 30px;
@@ -250,6 +300,27 @@ const SecondCon = styled.div`
       width: 700px;
       border-radius: 18px;
     }
+    #big {
+      width: 1300px;
+      margin-left: -400px;
+    }
+  }
+  @media screen and (max-width: 900px) {
+    justify-content: center;
+    .right {
+      text-align: center;
+
+      img {
+        width: 300px;
+      }
+      #big {
+        width: 700px;
+        align-items: center;
+        align-self: center;
+        text-align: center;
+        margin: 0;
+      }
+    }
   }
 `;
 
@@ -264,6 +335,8 @@ const FirstCon = styled.div`
   /* flex-wrap: wrap; */
   margin-top: 50px;
   gap: 100px;
+  flex-wrap: wrap;
+
   .left {
     img {
       width: 500px;
@@ -288,7 +361,8 @@ const FirstCon = styled.div`
       color: black;
       font-weight: lighter;
     }
-    button {
+    button,
+    a {
       color: #2d6834;
       border: 1px solid #2d6834;
       padding: 10px 30px;
@@ -306,6 +380,16 @@ const FirstCon = styled.div`
     .join_us_btn:hover {
       background-color: white;
       border: #fec034 1px solid;
+    }
+  }
+  @media screen and (max-width: 1600px) {
+    justify-content: center;
+  }
+  @media screen and (max-width: 9000px) {
+    .left {
+      img {
+        width: 300px;
+      }
     }
   }
 `;

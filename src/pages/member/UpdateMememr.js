@@ -13,16 +13,20 @@ import {
   PlusOutlined,
 } from "@ant-design/icons";
 import { DatePicker, Input, Select, Form, Button } from "antd";
-import { user } from "../../redux/authReducer";
-import { useSelector } from "react-redux";
+import { local, token, user } from "../../redux/authReducer";
+import { useDispatch, useSelector } from "react-redux";
+import TextArea from "antd/es/input/TextArea";
 export const UpdateMember = () => {
   const [urls, setUrls] = useState(null);
+  const tokens = useSelector(token);
 
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [residence_address, setResidence_address] = useState("");
   const [phone, setPhone] = useState("");
   const [photo, setPhoto] = useState("");
+  const [desc, setDesc] = useState("");
+
   const [password, setPassword] = useState("");
 
   const [memberType, setMemberType] = useState("");
@@ -34,7 +38,7 @@ export const UpdateMember = () => {
   const [year, setYear] = useState("");
   const [business, setBusiness] = useState("");
   const users = useSelector(user);
-
+  const dispatch = useDispatch();
   const [organization, setOrganization] = useState("");
   const [graduate_date, setGraduate_date] = useState("");
   const [error, setError] = useState(false);
@@ -63,6 +67,7 @@ export const UpdateMember = () => {
       company_name: company_name ? company_name : users.emacompany_nameil,
       job_title: job_title ? job_title : users.job_title,
       business: business ? business : users.business,
+      desc: desc ? desc : users.desc,
       organization: organization ? organization : users.organization,
     };
 
@@ -87,7 +92,13 @@ export const UpdateMember = () => {
         "http://localhost:5000/members/addmember/" + users._id,
         formData
       );
+      const d = { token: tokens, user: res.data.newMember };
+
+      localStorage.setItem("user", JSON.stringify(d));
+      dispatch(local({ user: res.data.newMember }));
+
       console.log("------------------eeeeeeeeeeee----------", res);
+
       res.data && window.location.replace("/");
     } catch (error) {
       setError(true);
@@ -232,6 +243,11 @@ export const UpdateMember = () => {
                 </Form.Item>
               </Col>
             </Row>
+            <TextArea
+              onChange={(e) => setDesc(e.target.value)}
+              rows={7}
+              placeholder="description"
+            />
             {/* <Row className="g-2  row_5">
               <Col md>
                 <Form.Item name="password">

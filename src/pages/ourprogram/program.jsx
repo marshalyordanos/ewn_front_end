@@ -36,7 +36,11 @@ function program() {
               management, greater innovation, and a fresh perspective on the
               develpment of society at large.
             </h2>
-            <button>Watch Other Videos</button>
+            <a
+              target={"_blank"}
+              href="https://www.youtube.com/@ethiopianwomeninenergyasso7086">
+              Watch Other Videos
+            </a>
           </div>
         </FirstCon>
       </div>
@@ -55,7 +59,11 @@ function program() {
               management, greater innovation, and a fresh perspective on the
               develpment of society at large.
             </h2>
-            <button>Watch Other Videos</button>
+            <a
+              target={"_blank"}
+              href="https://www.youtube.com/@ethiopianwomeninenergyasso7086">
+              Watch Other Videos
+            </a>
           </div>
           <div className="right">
             <img src={Program} alt="" />
@@ -261,6 +269,9 @@ const Team1 = styled.div`
       img {
         width: 300px;
       }
+      @media screen and (max-width: 900px) {
+        display: none;
+      }
     }
     .cards {
       .team__row {
@@ -317,7 +328,8 @@ const SecondCon = styled.div`
       color: black;
       font-weight: lighter;
     }
-    button {
+    button,
+    a {
       color: #2d6834;
       border: 1px solid #2d6834;
       padding: 10px 30px;
@@ -335,6 +347,24 @@ const SecondCon = styled.div`
     img {
       width: 700px;
       border-radius: 18px;
+    }
+  }
+  @media screen and (max-width: 900px) {
+    justify-content: center;
+    flex-wrap: wrap;
+    .right {
+      text-align: center;
+
+      img {
+        width: 300px;
+      }
+      #big {
+        width: 700px;
+        align-items: center;
+        align-self: center;
+        text-align: center;
+        margin: 0;
+      }
     }
   }
 `;
@@ -377,7 +407,8 @@ const FirstCon = styled.div`
       color: black;
       font-weight: lighter;
     }
-    button {
+    button,
+    a {
       color: #2d6834;
       border: 1px solid #2d6834;
       padding: 10px 30px;
@@ -395,6 +426,24 @@ const FirstCon = styled.div`
     .join_us_btn:hover {
       background-color: white;
       border: #fec034 1px solid;
+    }
+  }
+  @media screen and (max-width: 900px) {
+    justify-content: center;
+    flex-wrap: wrap;
+    .right {
+      text-align: center;
+
+      img {
+        width: 300px;
+      }
+      #big {
+        width: 700px;
+        align-items: center;
+        align-self: center;
+        text-align: center;
+        margin: 0;
+      }
     }
   }
 `;

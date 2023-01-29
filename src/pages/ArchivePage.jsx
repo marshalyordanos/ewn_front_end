@@ -99,6 +99,18 @@ const NewsLetters = styled.div`
     display: flex;
     gap: 20px;
   }
+  @media screen and (max-width: 1200px) {
+    .main__row {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .news_card {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  }
 `;
 
 const FirstCon = styled.div`

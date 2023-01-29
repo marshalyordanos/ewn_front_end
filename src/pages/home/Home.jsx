@@ -4,8 +4,10 @@ import { Header } from "../../components/header/Header";
 import "./home.css";
 import Carousel from "react-elastic-carousel";
 import BasicCard from "../../components/BasicCard";
-import { useLocation } from "react-router-dom";
+import { useHistory, useLocation } from "react-router-dom";
 import axios from "axios";
+import { useSelector } from "react-redux";
+import { token, user } from "../../redux/authReducer";
 
 function Home() {
   const breakPoints = [
@@ -22,9 +24,14 @@ function Home() {
     { id: 5, title: "item #5" },
   ];
   const [posts, setPosts] = useState([]);
+  const users = useSelector(user);
+  const tokens = useSelector(token);
+
+  console.log("###################################", tokens);
 
   // setp 2
   const { search } = useLocation();
+  const navigate = useHistory();
   // const location = useLocation()
   //console.log(location)
   console.log("*****************", posts);
@@ -75,8 +82,24 @@ function Home() {
               with the tool and networks to achieve their goals
             </p>
             <div className="btns">
-              <p className="btn_left">Read More</p>
-              <p className="btn_right2">JOIN EWiEn</p>
+              <p
+                onClick={() => {
+                  navigate.push("/about");
+                }}
+                className="btn_left">
+                Read More
+              </p>
+              <p
+                onClick={() => {
+                  if (tokens) {
+                    navigate.push("/program");
+                  } else {
+                    navigate.push("/addmember");
+                  }
+                }}
+                className="btn_right2">
+                JOIN EWiEn
+              </p>
             </div>
           </div>
           <div className="header_right">
@@ -159,7 +182,17 @@ function Home() {
           </Carousel>
           <div className="line_con">
             <div className="line"></div>
-            <p className="btn_right">JOIN US</p>
+            <p
+              onClick={() => {
+                if (tokens) {
+                  navigate.push("/program");
+                } else {
+                  navigate.push("/addmember");
+                }
+              }}
+              className="btn_right">
+              JOIN US
+            </p>
           </div>
         </div>
       </div>
@@ -174,7 +207,7 @@ function Home() {
               aut magni aperiam libero! Quo ratione illum quasi repellendus
               facilis, a tempore!
             </p>
-            <button> Full Story</button>
+            {/* <button> Full Story</button> */}
           </div>
         </div>
         <div className="right">
@@ -191,12 +224,16 @@ const Container = styled.div`
     max-width: 1000px;
 
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
 
     .left {
       width: 500px;
       > div {
         text-align: center;
+        /* p {
+          min-width: 300px;
+        } */
       }
       button {
         padding: 8px 20px;
@@ -211,6 +248,7 @@ const Container = styled.div`
       font-size: 20px;
     }
     p {
+      cursor: pointer;
       font-size: 18px;
       color: #2d6834;
       text-align: center;
@@ -237,6 +275,14 @@ const Container = styled.div`
 
     border-radius: 40px;
   }
+  @media screen and (max-width: 700px) {
+    .latest_form {
+      justify-content: center;
+      .left {
+        width: 400px;
+      }
+    }
+  }
 `;
 const OurProgramCon = styled.div`
   max-width: 1600px;
@@ -250,6 +296,7 @@ const OurProgramCon = styled.div`
       color: #2d6834;
       font-size: 16px;
       font-weight: 100;
+      cursor: pointer;
     }
     a {
       color: #2d6834;
@@ -262,6 +309,11 @@ const HeaderCon = styled.div`
   height: 400px;
   justify-content: space-evenly;
   align-items: center;
+  flex-wrap: wrap;
+
+  @media screen and (max-width: 700px) {
+    justify-content: center;
+  }
   .header_left {
     width: 400px;
     margin: 40px;
@@ -275,6 +327,7 @@ const HeaderCon = styled.div`
       color: #2d6834;
       text-align: justify;
       font-weight: lighter;
+      cursor: pointer;
     }
     .btns {
       display: flex;

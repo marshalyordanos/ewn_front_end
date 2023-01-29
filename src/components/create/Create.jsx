@@ -10,6 +10,7 @@ import { HeaderAdmin } from "../header/HeaderAdmin";
 import { useSelector } from "react-redux";
 import { user } from "../../redux/authReducer";
 import styled from "styled-components";
+import { Header } from "../header/Header";
 
 export const Create = () => {
   const [title, setTitle] = useState("");
@@ -54,7 +55,7 @@ export const Create = () => {
 
   return (
     <Container>
-      <HeaderAdmin />
+      <Header />
       <section className="newPost">
         <div className="container boxItems">
           <div className="img ">

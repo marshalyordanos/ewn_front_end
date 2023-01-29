@@ -13,6 +13,7 @@ import {
   PlusOutlined,
 } from "@ant-design/icons";
 import { DatePicker, Input, Select, Form, Button, Alert, Modal } from "antd";
+import TextArea from "antd/es/input/TextArea";
 export const Addmember = () => {
   const [urls, setUrls] = useState("");
 
@@ -21,6 +22,9 @@ export const Addmember = () => {
   const [residence_address, setResidence_address] = useState("");
   const [phone, setPhone] = useState("");
   const [photo, setPhoto] = useState("");
+  const [desc, setDesc] = useState("");
+  const [location, setLocation] = useState("");
+
   const [password, setPassword] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [memberType, setMemberType] = useState("");
@@ -53,6 +57,8 @@ export const Addmember = () => {
     formData.append("organization", organization);
     formData.append("photo", photo);
     formData.append("password", password);
+    formData.append("desc", desc);
+    // formData.append("location", location);
 
     try {
       const res = await axios.post(
@@ -193,6 +199,13 @@ export const Addmember = () => {
                 </Form.Item>
               </Col>
             </Row>
+
+            <TextArea
+              onChange={(e) => setDesc(e.target.value)}
+              rows={7}
+              placeholder="Description"
+            />
+
             <Row className="g-2  row_5">
               <Col md>
                 <Form.Item name="password">

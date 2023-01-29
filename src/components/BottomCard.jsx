@@ -1,7 +1,9 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 import styled from "styled-components";
 
 const BottomCard = () => {
+  const navigate = useHistory();
   return (
     <Container>
       <div className="card_con">
@@ -21,7 +23,12 @@ const BottomCard = () => {
         </div>
       </div>
       <div className="btn">
-        <button>Read More</button>
+        <button
+          onClick={() => {
+            navigate.push("/about");
+          }}>
+          Read More
+        </button>
       </div>
     </Container>
   );

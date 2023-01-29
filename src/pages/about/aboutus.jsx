@@ -5,8 +5,15 @@ import BorderThree from "../../assets/three.svg";
 import BorderLeft1 from "../../assets/left1.svg";
 import BorderRight1 from "../../assets/right1.svg";
 import CircleCard from "../../components/CircleCard";
+import { useHistory } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { token } from "../../redux/authReducer";
 
-function aboutus() {
+const Aboutus = () => {
+  const tokens = useSelector(token);
+
+  const navigate = useHistory();
+
   return (
     <Container>
       <Header />
@@ -37,7 +44,11 @@ function aboutus() {
               management, greater innovation, and a fresh perspective on the
               develpment of society at large.
             </h2>
-            <button>Watch Other Videos</button>
+            <a
+              target={"_blank"}
+              href="https://www.youtube.com/@ethiopianwomeninenergyasso7086">
+              Watch Other Videos
+            </a>
           </div>
         </FirstCon>
       </div>
@@ -56,7 +67,11 @@ function aboutus() {
               management, greater innovation, and a fresh perspective on the
               develpment of society at large.
             </h2>
-            <button>Watch Other Videos</button>
+            <a
+              target={"_blank"}
+              href="https://www.youtube.com/@ethiopianwomeninenergyasso7086">
+              Watch Other Videos
+            </a>
           </div>
           <div className="right">
             <img
@@ -94,7 +109,17 @@ function aboutus() {
               management, greater innovation, and a fresh perspective on the
               develpment of society at large.
             </h2>
-            <button className="join_us_btn">Join Us</button>
+            <button
+              onClick={() => {
+                if (tokens) {
+                  navigate.push("/program");
+                } else {
+                  navigate.push("/addmember");
+                }
+              }}
+              className="join_us_btn">
+              Join Us
+            </button>
           </div>
         </FirstCon>
         <div className="second_con">
@@ -214,7 +239,12 @@ function aboutus() {
               title={"It and Communication Officer"}
             />
           </div>
-          <button>Talk With Us</button>
+          <button
+            onClick={() => {
+              navigate.push("/contactus");
+            }}>
+            Talk With Us
+          </button>
         </Team1>
       </div>
 
@@ -223,7 +253,7 @@ function aboutus() {
           <img src={BorderLeft1} alt="" />
         </div>
 
-        <Team1>
+        <Team1 id="prt">
           <h1>Partners</h1>
           <div className="imgs">
             <img src="/img/partners/one.jpg" className="big" alt="" />
@@ -242,7 +272,7 @@ function aboutus() {
       </div>
     </Container>
   );
-}
+};
 
 const Team1 = styled.div`
   text-align: center;
@@ -315,7 +345,9 @@ const SecondCon = styled.div`
       color: black;
       font-weight: lighter;
     }
-    button {
+    button,
+    a {
+      /* display: block; */
       color: #2d6834;
       border: 1px solid #2d6834;
       padding: 10px 30px;
@@ -332,6 +364,24 @@ const SecondCon = styled.div`
     }
     img {
       border-radius: 18px;
+    }
+  }
+  @media screen and (max-width: 900px) {
+    justify-content: center;
+    flex-wrap: wrap;
+    .right {
+      text-align: center;
+
+      img {
+        width: 300px;
+      }
+      #big {
+        width: 700px;
+        align-items: center;
+        align-self: center;
+        text-align: center;
+        margin: 0;
+      }
     }
   }
 `;
@@ -362,7 +412,8 @@ const FirstCon = styled.div`
       color: black;
       font-weight: lighter;
     }
-    button {
+    button,
+    a {
       color: #2d6834;
       border: 1px solid #2d6834;
       padding: 10px 30px;
@@ -380,6 +431,24 @@ const FirstCon = styled.div`
     .join_us_btn:hover {
       background-color: white;
       border: #fec034 1px solid;
+    }
+  }
+  @media screen and (max-width: 900px) {
+    justify-content: center;
+    flex-wrap: wrap;
+    .right {
+      text-align: center;
+
+      img {
+        width: 300px;
+      }
+      #big {
+        width: 700px;
+        align-items: center;
+        align-self: center;
+        text-align: center;
+        margin: 0;
+      }
     }
   }
 `;
@@ -402,7 +471,7 @@ const Container = styled.div`
     }
   }
 `;
-export default aboutus;
+export default Aboutus;
 
 // <React.Fragment>
 // <div>

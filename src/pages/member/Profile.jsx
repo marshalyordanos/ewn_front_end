@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import styled from "styled-components";
 import { Header } from "../../components/header/Header";
 import IconOne from "../../assets/profile/one.svg";
@@ -10,10 +10,12 @@ import IconFour from "../../assets/profile/four.svg";
 import IconSix from "../../assets/profile/six.svg";
 import { useSelector } from "react-redux";
 import { user } from "../../redux/authReducer";
+import { EnvironmentOutlined } from "@ant-design/icons";
 
 const Profile = () => {
   const { id } = useParams();
   const [datas, setDatas] = useState([]);
+  const navigate = useHistory();
   const users = useSelector(user);
   console.log("============================", users);
 
@@ -25,6 +27,7 @@ const Profile = () => {
     };
     func();
   }, []);
+  console.log("[[[[[[[[[[[[[[[[[[[[[[[[[[[[", users);
   return (
     <Container>
       <Header />
@@ -46,19 +49,7 @@ const Profile = () => {
       </div>
       <About>
         <h1>About Bezawit</h1>
-        <h2>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Non sit sequi
-          exercitationem. Sit suscipit deserunt hic voluptatem dolores
-          distinctio obcaecati ullam? Dolore dicta placeat, quas repellendus
-          odio rerum. Recusandae, delectus. Lorem ipsum dolor, sit amet
-          consectetur adipisicing elit. Cum vero exercitationem necessitatibus
-          est laudantium inventore quam illum corporis nihil optio nemo ea
-          labore, beatae asperiores ipsa ullam esse dolore expedita! Lorem ipsum
-          dolor sit amet consectetur adipisicing elit. Ex ad laboriosam,
-          deserunt eius fugiat tenetur perspiciatis? Doloremque animi quo quas,
-          iure necessitatibus veniam eius saepe cumque, corporis reiciendis
-          quidem nihil.
-        </h2>
+        <h2>{users?.desc}</h2>
       </About>
       <div className="about">
         <Profile1>
@@ -105,8 +96,22 @@ const Profile = () => {
           </div>
           <div className="address_body">
             <div>
-              <img src={IconTwo} alt="" />
-              <p>Ethiopia, Addi Ababa, Nifas silk, Woreda 4</p>
+              <div
+                style={{
+                  border: "2px solid green",
+                  // padding: "10px",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  width: 50,
+                  height: 50,
+                  borderRadius: "50%",
+                }}>
+                <EnvironmentOutlined
+                  style={{ fontSize: 35, color: "#fec034" }}
+                />
+              </div>
+              <p>{users?.residence_address}</p>
             </div>
             <div>
               <img src={IconTwo} alt="" />
@@ -123,9 +128,36 @@ const Profile = () => {
           </div>
         </Adress>
       </div>
+      <Btn>
+        <button
+          onClick={() => {
+            navigate.push("/account");
+          }}>
+          Update
+        </button>
+      </Btn>
     </Container>
   );
 };
+
+const Btn = styled.div`
+  display: flex;
+  justify-content: center;
+  button,
+  a {
+    color: white;
+    border: 1px solid #2d6834;
+    background-color: #2d6834;
+    padding: 10px 100px;
+    border-radius: 40px;
+    font-size: 20px;
+    margin-top: 10px;
+  }
+  button:hover {
+    color: #2d6834;
+    background-color: white;
+  }
+`;
 const Profile1 = styled.div`
   .profile_body {
     width: 440px;
@@ -239,6 +271,12 @@ const Container = styled.div`
     margin-top: 60px;
     display: flex;
     /* align-items: center; */
+  }
+  @media screen and (max-width: 1100px) {
+    .about {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
   }
   .top {
     display: flex;

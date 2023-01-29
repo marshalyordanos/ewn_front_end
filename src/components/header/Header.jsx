@@ -7,6 +7,8 @@ import { Link, NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { user } from "../../redux/authReducer";
 import { Button, Dropdown } from "antd";
+import { MenuUnfoldOutlined } from "@ant-design/icons";
+import styled from "styled-components";
 
 export const Header = () => {
   const [scroll, setScroll] = useState(false);
@@ -29,14 +31,14 @@ export const Header = () => {
         </Link>
       ),
     },
-    {
-      key: "2",
-      label: (
-        <Link rel="Parterns" to="#">
-          Parterns
-        </Link>
-      ),
-    },
+    // {
+    //   key: "2",
+    //   label: (
+    //     <Link rel="Parterns" to="#prt">
+    //       Parterns
+    //     </Link>
+    //   ),
+    // },
   ];
 
   const items = [
@@ -48,14 +50,14 @@ export const Header = () => {
         </Link>
       ),
     },
-    {
-      key: "2",
-      label: (
-        <Link rel="Parterns" href="/parterns">
-          Parterns
-        </Link>
-      ),
-    },
+    // {
+    //   key: "2",
+    //   label: (
+    //     <Link rel="Parterns" to="prt">
+    //       Parterns
+    //     </Link>
+    //   ),
+    // },
   ];
 
   const kkkk = [
@@ -85,10 +87,77 @@ export const Header = () => {
     },
   ];
 
+  const list = [
+    {
+      key: "1",
+      label: (
+        <Link rel="Blogs" to="/">
+          Home
+        </Link>
+      ),
+    },
+    {
+      key: "2",
+      label: (
+        <Link rel="News Letters" to="/membership">
+          Membership
+        </Link>
+      ),
+    },
+    {
+      key: "3",
+      label: (
+        <Link rel="Gallary" to="/about">
+          About us
+        </Link>
+      ),
+    },
+    {
+      key: "4",
+      label: (
+        <Link rel="Gallary" to="/program">
+          Our Program
+        </Link>
+      ),
+    },
+    {
+      key: "3",
+      label: (
+        <Link rel="Gallary" to="/news">
+          News
+        </Link>
+      ),
+    },
+    {
+      key: "3",
+      label: (
+        <Link rel="Gallary" to="/archive">
+          Blogs
+        </Link>
+      ),
+    },
+    {
+      key: "3",
+      label: (
+        <Link rel="Gallary" to="/payment">
+          Payment
+        </Link>
+      ),
+    },
+    {
+      key: "3",
+      label: (
+        <Link rel="Gallary" to="/contactus">
+          Contact
+        </Link>
+      ),
+    },
+  ];
+
   console.log("33333333333333333333333333333333333333333", users);
 
   return (
-    <>
+    <Container>
       <header className="header">
         <div className="container flex">
           <div className="logo">
@@ -99,6 +168,17 @@ export const Header = () => {
             )}
           </div>
           <div className="account flexCenter">
+            <Dropdown
+              menu={{
+                items: list,
+              }}
+              placement="bottom"
+              arrow>
+              <div className="menu">
+                <MenuUnfoldOutlined style={{ fontSize: 33, color: "green" }} />
+              </div>
+            </Dropdown>
+
             <nav>
               <ul>
                 <li>
@@ -136,8 +216,9 @@ export const Header = () => {
                     arrow>
                     <a href="#">Archive</a>
                   </Dropdown>
+                  {!users?.admin && <NavLink to="/payment">Payment</NavLink>}
+
                   <NavLink to="/contactus">Contact</NavLink>
-                  {users?.admin && <NavLink to="/payment">Payment</NavLink>}
                 </li>
               </ul>
             </nav>
@@ -145,6 +226,22 @@ export const Header = () => {
           </div>
         </div>
       </header>
-    </>
+    </Container>
   );
 };
+
+const Container = styled.div`
+  .menu {
+    display: none;
+    padding: 10px;
+  }
+  .menu:hover {
+    background-color: whitesmoke;
+    padding: 10px;
+  }
+  @media screen and (max-width: 765px) {
+    .menu {
+      display: block;
+    }
+  }
+`;

@@ -15,6 +15,7 @@ import { Table, Modal, Form, Input, Checkbox } from "antd";
 import TextArea from "antd/es/input/TextArea";
 import axios from "axios";
 import { Link, useHistory } from "react-router-dom";
+import { Header } from "../../components/header/Header";
 
 const columns = [
   {
@@ -190,7 +191,7 @@ function Memberlist() {
         <TextArea onChange={(e) => setContent(e.target.value)} rows={4} />
       </Modal>
       <Container className="App">
-        <HeaderAdmin />
+        <Header />
 
         <Body>
           <div className="member__top">

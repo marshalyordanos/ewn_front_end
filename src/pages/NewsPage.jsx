@@ -10,8 +10,9 @@ import axios from "axios";
 import { useLocation } from "react-router-dom";
 
 const NewsPage = () => {
-  const [posts, setPosts] = useState([]);
+  // const [posts, setPosts] = useState([]);
   const { search } = useLocation();
+  const [posts, setPosts] = useState([]);
 
   useEffect(() => {
     const fetchPost = async () => {
@@ -48,13 +49,17 @@ const NewsPage = () => {
             professions.
           </p>
           <div className="cards">
-            <BasicCard />
-            <BasicCard />
-            <BasicCard />
+            {posts?.slice(0, 3).map((blog) => {
+              return <BasicCard desc={blog.desc} photo={blog.photo} />;
+            })}
           </div>
           <div className="news_card">
             <p>Check out All Sporlighted women</p>
-            <button>Watch all Videos</button>
+            <a
+              target={"_blank"}
+              href="https://www.youtube.com/@ethiopianwomeninenergyasso7086">
+              Watch Other Videos
+            </a>
           </div>
         </NewsLetters>
       </div>
@@ -78,7 +83,8 @@ const NewsLetters = styled.div`
     align-items: end;
     justify-content: center;
     gap: 70px;
-    button {
+    button,
+    a {
       color: #2d6834;
       border: 1px solid #2d6834;
       padding: 10px 30px;
@@ -109,6 +115,13 @@ const NewsLetters = styled.div`
       font-size: 20px;
       text-align: left;
       font-weight: bolder;
+    }
+  }
+  @media screen and (max-width: 1200px) {
+    .cards {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
   }
 `;
@@ -151,7 +164,8 @@ const FirstCon = styled.div`
       color: black;
       font-weight: lighter;
     }
-    button {
+    button,
+    a {
       color: #2d6834;
       border: 1px solid #2d6834;
       padding: 10px 30px;
@@ -200,6 +214,13 @@ const Container = styled.div`
     max-width: 1400px;
     margin: auto;
     display: flex;
+  }
+  @media screen and (max-width: 1200px) {
+    .bottom_cards > div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
   }
 `;
 
