@@ -349,6 +349,47 @@ const SecondCon = styled.div`
       border-radius: 18px;
     }
   }
+  @media screen and (max-width: 1600px) {
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+    .left {
+      h1 {
+        font-size: 22px;
+        color: #2d6834;
+        text-align: center;
+      }
+      h2 {
+        width: 400px;
+        text-align: justify;
+        font-size: 17px;
+        color: black;
+        font-weight: lighter;
+      }
+      button,
+      a {
+        color: #2d6834;
+        border: 1px solid #2d6834;
+        padding: 10px 30px;
+        border-radius: 40px;
+        font-size: 20px;
+        margin-top: 10px;
+      }
+    }
+    .right {
+      h1 {
+        font-size: 17px;
+      }
+      img {
+        width: 400px;
+        border-radius: 18px;
+      }
+      #big {
+        width: 700px;
+        margin-left: -400px;
+      }
+    }
+  }
   @media screen and (max-width: 900px) {
     justify-content: center;
     flex-wrap: wrap;
@@ -426,6 +467,54 @@ const FirstCon = styled.div`
     .join_us_btn:hover {
       background-color: white;
       border: #fec034 1px solid;
+    }
+  }
+  @media screen and (max-width: 1600px) {
+    justify-content: center;
+    .left {
+      img {
+        width: 400px;
+      }
+      h1 {
+        font-size: 22px;
+        color: #2d6834;
+      }
+    }
+    .right {
+      text-align: center;
+
+      h1 {
+        font-size: 23px;
+        color: #2d6834;
+        text-align: center;
+      }
+      h2 {
+        max-width: 500px;
+        text-align: justify;
+        font-size: 17px;
+        color: black;
+        font-weight: lighter;
+      }
+      button,
+      a {
+        color: #2d6834;
+        border: 1px solid #2d6834;
+        padding: 10px 30px;
+        border-radius: 40px;
+        font-size: 20px;
+        margin-top: 10px;
+      }
+      .join_us_btn {
+        background-color: #fec034;
+        border: none;
+        border: #fec034 1px solid;
+        margin: 40px 0;
+        color: #2d6834;
+      }
+      .join_us_btn:hover {
+        background-color: white;
+        border: #fec034 1px solid;
+      }
     }
   }
   @media screen and (max-width: 900px) {

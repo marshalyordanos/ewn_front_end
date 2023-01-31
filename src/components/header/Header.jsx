@@ -186,28 +186,15 @@ export const Header = () => {
                   {users?.admin && <NavLink to="/memberlist">Members</NavLink>}
 
                   <NavLink to="/membership">Membership</NavLink>
-                  <NavLink to="/program">Program</NavLink>
+                  {/* <NavLink to="/program">Program</NavLink> */}
                   {users?.admin && <NavLink to="/create">Post Blogs</NavLink>}
 
-                  <Dropdown
-                    menu={{
-                      items,
-                    }}
-                    placement="bottomLeft"
-                    arrow>
-                    <a href="#">About Us</a>
-                  </Dropdown>
+                  <NavLink to="/about">About Us</NavLink>
 
                   <NavLink to="/program">Our Programs</NavLink>
                   {/* <NavLink to="/blog">Blog</NavLink> */}
-                  <Dropdown
-                    menu={{
-                      items: news,
-                    }}
-                    placement="bottomLeft"
-                    arrow>
-                    <a href="#">News</a>
-                  </Dropdown>
+
+                  <NavLink to="/news">News</NavLink>
                   <Dropdown
                     menu={{
                       items: kkkk,

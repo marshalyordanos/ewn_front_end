@@ -275,7 +275,7 @@ const Container = styled.div`
 
     border-radius: 40px;
   }
-  @media screen and (max-width: 700px) {
+  @media screen and (max-width: 830px) {
     .latest_form {
       justify-content: center;
       .left {
