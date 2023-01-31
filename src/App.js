@@ -16,7 +16,7 @@ import { Account } from "./pages/account/Account";
 import { Create } from "./components/create/Create";
 import { Context } from "./context/Context";
 import { Addmember } from "./pages/member/addmember";
-import contactus from "./pages/contact/contactus";
+import Contactus from "./pages/contact/contactus";
 import program from "./pages/ourprogram/program";
 import aboutus from "./pages/about/aboutus";
 import Home from "./pages/home/Home";
@@ -72,7 +72,7 @@ const App = () => {
 
             {/* <Route exact path="/program" component={ProgramPage} /> */}
 
-            <Route exact path="/contactus" component={contactus} />
+            <Route exact path="/contactus" component={Contactus} />
             <Route exact path="/post/:id" component={DetailsPages} />
             <Route exact path="/account" component={UpdateMember} />
             <Route exact path="/create" component={Create} />
@@ -82,7 +82,7 @@ const App = () => {
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/program" component={program} />
-            <Route exact path="/contactus" component={contactus} />
+            <Route exact path="/contactus" component={Contactus} />
 
             {/* <Route exact path="/admin" component={Login} /> */}
             <Route exact path="/blog" component={Blog} />
