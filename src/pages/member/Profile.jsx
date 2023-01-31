@@ -39,7 +39,11 @@ const Profile = () => {
       </div>
       <div className="top">
         <div className="image">
-          <img src={"http://localhost:5000" + users?.photo} alt="" />
+          {users?.photo ? (
+            <img src={"http://localhost:5000" + users?.photo} alt="" />
+          ) : (
+            <img src="" />
+          )}
         </div>
         <div className="top__right">
           <h1>{users.username}</h1>
