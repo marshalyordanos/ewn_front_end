@@ -48,31 +48,6 @@ function Home() {
     <Container>
       <Header />
       <div className="home">
-        <section
-          id="hero"
-          class="d-flex justify-cntent-center align-items-center">
-          <div
-            id="heroCarousel"
-            class="container carousel carousel-fade"
-            data-bs-ride="carousel"
-            data-bs-interval="5000">
-            <div class="carousel-item active">
-              <div class="carousel-container">
-                <h2 class="animate__animated animate__fadeInDown">
-                  Welcome to <span>ETHIOPIAN WOMEN IN ENERGY</span>
-                </h2>
-                <p class="animate__animated animate__fadeInUp">
-                  Women at The Heart of Energy Access
-                </p>
-                <a
-                  href="/about"
-                  class="btn-get-started animate__animated animate__fadeInUp">
-                  Read More
-                </a>
-              </div>
-            </div>
-          </div>
-        </section>
         <HeaderCon>
           <div className="header_left">
             <h1>ETHIOPIAN WOMEN IS ENERGY NETWORK</h1>
